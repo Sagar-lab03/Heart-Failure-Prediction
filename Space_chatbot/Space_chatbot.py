@@ -49,12 +49,44 @@ def check_all_messages(message):  # create a dictionary so highest prob list is 
     # Response ------------------------------------------------------------------
     response('Hello! Welcome to the space chatbot! How can I help you ?', ['hello', 'hi', 'hey'],
              single_response=True)
-    response('I\'m doing fine, How can I help you', ['how', 'are', 'you', 'doing'], single_response=True)
+
+    response('I\'m doing fine, How can I help you', ['how', 'are', 'you', 'doing'], required_words=['how', 'you',
+                                                                                                    'doing'])
+
+    response('3,84,400 Km', ['distance', 'moon'], single_response=True)
+    response('3 x 10^8 Km per second', ['speed', 'light'], single_response=True)
+    response('Approximately 1.99 x 10^30 kilograms', ['mass', 'sun'], single_response=True)
+    response('Approximately 100,000 light-years.', ['diameter', 'milky', 'way', 'galaxy'], single_response=True)
+    response('150 million Km', ['distance', 'sun', 'earth'], single_response=True)
+    response('Ap', ['distance', 'moon'], single_response=True)
+    response('3,84,400 Km', ['distance', 'moon'], single_response=True)
+    response('3,84,400 Km', ['distance', 'moon'], single_response=True)
+    response('3,84,400 Km', ['distance', 'moon'], single_response=True)
+    response('3,84,400 Km', ['distance', 'moon'], single_response=True)
+    response(s_long.R_STS, ['sun', 'surface', 'temperature'], single_response=True)
+
+
+
+
     response('Milkyway galaxy', ['live', 'galaxy', 'name'], required_words=['galaxy'])
     response('Andromeda galaxy', ['neighbour', 'galaxy', 'name'], required_words=['neighbour', 'galaxy'])
     response('1 Million $', ['telescope', 'cost'], required_words=['telescope'])
-    response('Alpha Centuri', ['closest', 'star'], required_words=['star', 'closest'], single_response=True)
-    response('9.46 x 10^12 km', ['light', 'year'], required_words=['light', 'year'])
+    response('Alpha Centuri, 4.3 light years away from Earth ', ['closest', 'star'], required_words=['star', 'closest'],
+             single_response=True)
+
+    response('Saturn has 83 moons', ['saturn', 'moons'], required_words=['saturn', 'moons'])
+    response('Jupiter has around 92 moons', ['jupiter', 'moons'], required_words=['jupiter', 'moons'])
+    response('Uranus has 27 moons', ['jupiter', 'moons'], required_words=['uranus', 'moons'])
+    response('Neptune has 14 moons', ['neptune', 'moons'], required_words=['neptune', 'moons'])
+    response('Phobos and Deimos', ['mars', 'moons'], required_words=['mars', 'moons'])
+    response('Sirius (also known as "Dog Star"), 8.6 light years distance from Earth ', ['brightest', 'star'],
+             required_words=['brightest', 'star'])
+    response('Stephenson 2-18, 20,000 light years away from Earth', ['largest', 'star'], required_words=['largest', 'star'])
+    response('Between 100 to 200 Billion galaxies', ['how', 'many', 'galaxies', 'universe'],
+             required_words=['how', 'many', 'galaxies'])
+    response('approximately 13.8 billion years old', ['old', 'universe'], required_words=['old', 'universe'])
+
+    response('1 Million $', ['telescope', 'cost'], required_words=['telescope'])
     response('1 Million $', ['telescope', 'cost'], required_words=['telescope'])
     response('1 Million $', ['telescope', 'cost'], required_words=['telescope'])
     response('1 Million $', ['telescope', 'cost'], required_words=['telescope'])
@@ -63,21 +95,19 @@ def check_all_messages(message):  # create a dictionary so highest prob list is 
 
     response(s_long.R_PLANET, ['planets', 'solar', 'system'], required_words=['planets'])
     response(s_long.R_SN, ['supernova'], required_words=['supernova'])
-    # response(s_long.R_ST, ['star'], required_words=['star'])
+    response(s_long.R_LY, ['light', 'year'], required_words=['light', 'year'])
     response(s_long.R_NB, ['nebula'], required_words=['nebula'])
     response(s_long.R_SN, ['supernova'], required_words=['supernova'])
     response(s_long.R_BB, ['big', 'bang'], required_words=['big', 'bang'])
     response(s_long.R_S, ['what', 'space', 'technology'], required_words=['space'])
+    response(s_long.R_TBH, ['types', 'black', 'hole'], required_words=['types', 'black', 'hole'])
+    response(s_long.R_BH, ['black', 'hole'], required_words=['black', 'hole'])
+    response(s_long.R_ST, ['total', 'satellites', 'orbits', 'sky', 'earth'], required_words=['satellites', 'orbits',
+                                                                                             'earth'])
+    response(s_long.R_BB, ['big', 'bang'], required_words=['big', 'bang'])
 
+    response('Glad, I am able to help you :)', ['thank', 'you'], required_words=['thank', 'you'])
 
-    response('Glad, I am able to help you :)', ['thank', 'you'], single_response=True)
-
-
-
-
-
-    response(s_long.R_BH, ['black', 'hole'], single_response=True)
-    
     best_match = max(highest_prob_list, key=highest_prob_list.get)
     # print(highest_prob_list)  # Optional, just for showing percentage
 
